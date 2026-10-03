@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ÉLORA | Luxury Fashion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+  --beige: #e8dccb;
+
+  --light-beige: #f4eee5;
+
+  --cream: #faf8f4;
+
+  --white: #fff;
+
+  --brown: #78644f;
+
+  --dark: #3d332a;
+
+  --muted: #928476;
+
+  --border: #e6ddd1;
+
+}
+
+* { box-sizing:border-box; margin:0; padding:0; }
+
+html { scroll-behavior:smooth; }
+
+body {
+
+  background:var(--cream);
+
+  color:var(--dark);
+
+  font-family:'DM Sans',sans-serif;
+
+}
+
+button,input,select {font:inherit}
+
+button {cursor:pointer}
+
+a {text-decoration:none;color:inherit}
+
+/* NAVIGATION */
+
+header {
+
+  height:76px;
+
+  padding:0 6%;
+
+  background:#fff;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:20;
+
+  border-bottom:1px solid var(--border);
+
+}
+
+.logo {
+
+  font:700 34px 'Cormorant Garamond',serif;
+
+  letter-spacing:5px;
+
+  color:var(--dark);
+
+}
+
+nav {display:flex;gap:30px}
+
+nav a {
+
+  font-size:11px;
+
+  letter-spacing:1.5px;
+
+  transition:.3s;
+
+}
+
+nav a:hover {color:#a58a6c}
+
+.header-actions {display:flex;align-items:center;gap:17px}
+
+.icon-btn {
+
+  border:0;background:none;color:var(--dark);
+
+  font-size:21px;
+
+}
+
+.cart-count {
+
+  background:var(--beige);
+
+  border-radius:50%;
+
+  padding:3px 7px;
+
+  font-size:10px;
+
+}
+
+.menu-btn {display:none}
+
+/* HERO */
+
+.hero {
+
+  min-height:650px;
+
+  position:relative;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  color:white;
+
+  background:#b8a997;
+
+  overflow:hidden;
+
+}
+
+.hero:before {
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+   linear-gradient(90deg,#30251d77,#30251d22,#30251d77),
+
+   url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1800")
+
+   center 35%/cover;
+
+  animation:heroZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes heroZoom {
+
+  from {transform:scale(1)}
+
+  to {transform:scale(1.07)}
+
+}
+
+.hero-content {
+
+  position:relative;
+
+  z-index:2;
+
+  padding:40px 20px;
+
+}
+
+.eyebrow {
+
+  font-size:11px;
+
+  letter-spacing:5px;
+
+  color:#d9c4a8;
+
+}
+
+.hero h1 {
+
+  font:500 clamp(55px,8vw,105px)/.95 'Cormorant Garamond',serif;
+
+  margin:25px 0;
+
+}
+
+.hero p {
+
+  font-size:13px;
+
+  line-height:2;
+
+  letter-spacing:1px;
+
+}
+
+.hero-buttons {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  margin-top:30px;
+
+}
+
+.primary-btn,.outline-btn {
+
+  padding:15px 27px;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  transition:.3s;
+
+}
+
+.primary-btn {
+
+  border:1px solid var(--beige);
+
+  background:var(--beige);
+
+  color:var(--dark);
+
+}
+
+.primary-btn:hover {background:white}
+
+.outline-btn {
+
+  background:transparent;
+
+  border:1px solid white;
+
+  color:white;
+
+}
+
+.outline-btn:hover {
+
+  background:white;color:var(--dark);
+
+}
+
+/* GENERAL SECTIONS */
+
+section {padding:85px 6%}
+
+.section-heading {
+
+  text-align:center;
+
+  margin-bottom:38px;
+
+}
+
+.section-heading .eyebrow {color:#a48a6e}
+
+.section-heading h2 {
+
+  font:500 clamp(36px,5vw,55px) 'Cormorant Garamond',serif;
+
+  margin:9px 0;
+
+}
+
+.section-heading p {
+
+  font-size:12px;
+
+  color:var(--muted);
+
+  line-height:1.8;
+
+}
+
+/* RUNWAY */
+
+.runway {
+  height: 650px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    #e9ddca,
+    #b9a78e 48%,
+    #887966
+  );
+  perspective: 1000px;
+}
+
+/* Perspective runway */
+.runway:before {
+  content: "";
+  position: absolute;
+  bottom: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 85%;
+  background: linear-gradient(
+    90deg,
+    #a89982,
+    #f2e7d6,
+    #a89982
+  );
+  clip-path: polygon(43% 0, 57% 0, 100% 100%, 0 100%);
+}
+
+/* Runway spotlight */
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #fff8e4aa,
+    #fff8e422,
+    transparent
+  );
+  clip-path: polygon(43% 0, 57% 0, 100% 100%, 0 100%);
+}
+
+/* Moving fashion model */
+.runway-model {
+  position: absolute;
+  z-index: 2;
+  bottom: -5px;
+  left: 50%;
+  height: 95%;
+  width: min(65%, 450px);
+  object-fit: contain;
+  object-position: center bottom;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 10px 14px #57422c55);
+  animation: runwayWalk 9s ease-in-out infinite;
+  transition: opacity .4s;
+}
+
+/* Walk forward, pose, turn and walk back */
+@keyframes runwayWalk {
+  0% {
+    transform: translateX(-50%) translateY(-70px)
+      scale(.58) rotateY(0deg);
+  }
+
+  20% {
+    transform: translateX(-50%) translateY(-35px)
+      scale(.78) rotateY(0deg);
+  }
+
+  38% {
+    transform: translateX(-50%) translateY(0)
+      scale(1.05) rotateY(0deg);
+  }
+
+  /* Present the outfit */
+  45% {
+    transform: translateX(-50%) translateY(0)
+      scale(1.08) rotateY(0deg);
+  }
+
+  53% {
+    transform: translateX(-50%) translateY(0)
+      scale(1.08) rotateY(0deg);
+  }
+
+  /* Turn around */
+  60% {
+    transform: translateX(-50%) translateY(0)
+      scale(1.04) rotateY(180deg);
+  }
+
+  /* Walk towards the far end */
+  80% {
+    transform: translateX(-50%) translateY(-40px)
+      scale(.78) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(-70px)
+      scale(.58) rotateY(360deg);
+  }
+}
+
+/* Pause animation */
+.runway.paused .runway-model {
+  animation-play-state: paused;
+}
+
+@media (max-width: 600px) {
+  .runway {
+    height: 520px;
+  }
+
+  .runway-model {
+    width: 90%;
+    height: 88%;
+  }
+}
+
+@keyframes walk {
+
+  0% {transform:translateY(7px) translateX(-8px) scale(.88)}
+
+  50% {transform:translateY(0) translateX(7px) scale(.94)}
+
+  100% {transform:translateY(5px) translateX(-3px) scale(1)}
+
+}
+
+.runway.paused .runway-model {animation-play-state:paused}
+
+.runway-info {
+
+  position:absolute;
+
+  bottom:25px;
+
+  left:30px;
+
+  z-index:4;
+
+  color:white;
+
+  text-shadow:0 1px 5px #66513b;
+
+}
+
+.runway-info small {
+
+  letter-spacing:3px;
+
+  font-size:10px;
+
+}
+
+.runway-info h3 {
+
+  font:38px 'Cormorant Garamond',serif;
+
+  margin:6px 0 13px;
+
+}
+
+.runway-controls {
+
+  position:absolute;
+
+  bottom:25px;
+
+  right:30px;
+
+  display:flex;
+
+  gap:10px;
+
+  z-index:4;
+
+}
+
+.round-btn {
+
+  width:43px;
+
+  height:43px;
+
+  border:1px solid #ffffffb0;
+
+  border-radius:50%;
+
+  background:#5d514488;
+
+  color:white;
+
+  font-size:17px;
+
+}
+
+.round-btn:hover {background:white;color:var(--dark)}
+
+.runway-pause {
+
+  position:absolute;
+
+  right:25px;
+
+  top:25px;
+
+  z-index:4;
+
+}
+
+/* SHOP */
+
+.shop-section {background:#fff}
+
+.search-box {
+
+  display:block;
+
+  max-width:360px;
+
+  width:100%;
+
+  padding:14px 17px;
+
+  margin:0 auto 28px;
+
+  border:1px solid var(--border);
+
+  background:var(--cream);
+
+  outline:none;
+
+  font-size:12px;
+
+}
+
+.filters {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:35px;
+
+}
+
+.filter-btn {
+
+  padding:11px 20px;
+
+  background:transparent;
+
+  border:1px solid var(--border);
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+  color:var(--dark);
+
+}
+
+.filter-btn.active,.filter-btn:hover {
+
+  background:var(--dark);
+
+  color:white;
+
+}
+
+.products {
+
+  display:grid;
+
+  grid-template-columns:repeat(4,minmax(0,1fr));
+
+  gap:24px;
+
+}
+
+.product-card {min-width:0}
+
+.product-image {
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:var(--light-beige);
+
+}
+
+.product-image img {
+
+  width:100%;
+
+  aspect-ratio:3/4;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:transform .5s;
+
+}
+
+.product-card:hover .product-image img {transform:scale(1.05)}
+
+.heart {
+
+  position:absolute;
+
+  right:12px;
+
+  top:12px;
+
+  width:35px;
+
+  height:35px;
+
+  border:0;
+
+  border-radius:50%;
+
+  background:#fffE;
+
+  color:var(--dark);
+
+  font-size:20px;
+
+}
+
+.heart.liked {color:#b65a60}
+
+.quick-view {
+
+  position:absolute;
+
+  bottom:12px;
+
+  left:12px;
+
+  right:12px;
+
+  padding:13px;
+
+  border:0;
+
+  background:#fffE;
+
+  color:var(--dark);
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  opacity:0;
+
+  transition:.3s;
+
+}
+
+.product-card:hover .quick-view {opacity:1}
+
+.product-meta {padding:13px 2px}
+
+.product-meta h3 {
+
+  font:22px 'Cormorant Garamond',serif;
+
+}
+
+.product-meta p {
+
+  font-size:11px;
+
+  color:var(--muted);
+
+  margin:5px 0;
+
+}
+
+.product-price {font-size:13px;font-weight:600}
+
+.add-btn {
+
+  width:100%;
+
+  margin-top:12px;
+
+  padding:12px;
+
+  border:1px solid var(--dark);
+
+  background:transparent;
+
+  color:var(--dark);
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+}
+
+.add-btn:hover {background:var(--dark);color:white}
+
+/* COLLECTIONS */
+
+.collection {background:var(--light-beige)}
+
+.collection-grid {
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:22px;
+
+}
+
+.collection-card {
+
+  height:440px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:var(--beige);
+
+}
+
+.collection-card img {
+
+  width:100%;height:100%;object-fit:cover;
+
+  transition:transform .5s;
+
+}
+
+.collection-card:hover img {transform:scale(1.05)}
+
+.collection-caption {
+
+  position:absolute;
+
+  bottom:25px;
+
+  left:25px;
+
+  color:white;
+
+  text-shadow:0 2px 8px #40352a;
+
+}
+
+.collection-caption h3 {
+
+  font:40px 'Cormorant Garamond',serif;
+
+}
+
+.collection-caption button {
+
+  margin-top:12px;
+
+  background:#fff3;
+
+  color:white;
+
+  border:1px solid white;
+
+  padding:12px 18px;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+}
+
+.collection-caption button:hover {background:white;color:var(--dark)}
+
+/* FOOTER */
+
+footer {
+
+  background:#e5dacb;
+
+  color:var(--dark);
+
+  padding:55px 6% 20px;
+
+}
+
+.footer-grid {
+
+  display:grid;
+
+  grid-template-columns:2fr 1fr 1fr;
+
+  gap:35px;
+
+}
+
+footer h3 {
+
+  font:700 32px 'Cormorant Garamond',serif;
+
+  letter-spacing:5px;
+
+}
+
+footer h4 {
+
+  font-size:11px;
+
+  letter-spacing:2px;
+
+  margin-bottom:15px;
+
+}
+
+footer p,footer a {
+
+  font-size:11px;
+
+  line-height:2.2;
+
+  color:#716354;
+
+}
+
+footer a {display:block}
+
+footer a:hover {color:#a17c50}
+
+.footer-bottom {
+
+  border-top:1px solid #cfc2b2;
+
+  margin-top:35px;
+
+  padding-top:18px;
+
+  text-align:center;
+
+  font-size:10px;
+
+  color:#857664;
+
+}
+
+/* CART */
+
+.overlay {
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:40;
+
+  background:#33291f77;
+
+  display:none;
+
+}
+
+.overlay.show {display:block}
+
+.cart-drawer {
+
+  position:absolute;
+
+  right:0;top:0;
+
+  width:min(440px,100%);
+
+  height:100%;
+
+  padding:25px;
+
+  background:#fff;
+
+  overflow-y:auto;
+
+  transform:translateX(100%);
+
+  transition:transform .3s;
+
+}
+
+.overlay.show .cart-drawer {transform:translateX(0)}
+
+.drawer-header {
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  border-bottom:1px solid var(--border);
+
+  padding-bottom:18px;
+
+}
+
+.drawer-header h2 {font:30px 'Cormorant Garamond',serif}
+
+.close-btn {border:0;background:none;font-size:26px;color:var(--dark)}
+
+.cart-item {
+
+  display:flex;
+
+  gap:14px;
+
+  padding:17px 0;
+
+  border-bottom:1px solid var(--border);
+
+}
+
+.cart-item img {width:85px;height:110px;object-fit:cover}
+
+.cart-item-info {flex:1}
+
+.cart-item-info h3 {font:21px 'Cormorant Garamond',serif}
+
+.cart-item-info p {font-size:11px;color:var(--muted);margin:5px 0}
+
+.qty {display:flex;align-items:center;gap:12px;margin-top:9px}
+
+.qty button {
+
+  width:25px;height:25px;
+
+  border:1px solid var(--border);
+
+  background:white;
+
+}
+
+.remove {
+
+  border:0;background:none;color:#a15b54;
+
+  font-size:10px;margin-top:8px;
+
+}
+
+.cart-total {
+
+  display:flex;justify-content:space-between;
+
+  padding:20px 0;font-weight:600;
+
+}
+
+.full-btn {
+
+  width:100%;
+
+  padding:15px;
+
+  background:var(--dark);
+
+  color:white;
+
+  border:1px solid var(--dark);
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  margin-top:10px;
+
+}
+
+.full-btn:hover {background:#75614d}
+
+.empty {text-align:center;padding:55px 5px;color:var(--muted)}
+
+/* MODALS */
+
+.modal {
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:60;
+
+  background:#33291f88;
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:15px;
+
+}
+
+.modal.show {display:flex}
+
+.modal-box {
+
+  background:white;
+
+  width:min(680px,100%);
+
+  max-height:90vh;
+
+  overflow:auto;
+
+  padding:28px;
+
+  position:relative;
+
+}
+
+.modal-close {
+
+  position:absolute;
+
+  right:18px;top:12px;
+
+  border:0;background:none;
+
+  font-size:26px;
+
+  color:var(--dark);
+
+}
+
+.product-detail {
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:25px;
+
+}
+
+.product-detail img {
+
+  width:100%;height:390px;object-fit:cover;
+
+}
+
+.detail-info {padding-top:35px}
+
+.detail-info h2 {
+
+  font:36px 'Cormorant Garamond',serif;
+
+  margin:6px 0;
+
+}
+
+.detail-info p {
+
+  font-size:12px;
+
+  line-height:1.8;
+
+  color:var(--muted);
+
+  margin:12px 0;
+
+}
+
+.detail-price {font-weight:600;font-size:16px}
+
+.option-label {
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  margin:18px 0 9px;
+
+}
+
+.sizes {display:flex;gap:8px;flex-wrap:wrap}
+
+.size-btn {
+
+  padding:10px 14px;
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  font-size:11px;
+
+}
+
+.size-btn.selected {background:var(--dark);color:white}
+
+.detail-info select {
+
+  padding:10px;
+
+  width:100%;
+
+  border:1px solid var(--border);
+
+  background:white;
+
+}
+
+.checkout-form {display:grid;gap:14px;margin-top:20px}
+
+.checkout-form label {font-size:11px;letter-spacing:1px}
+
+.checkout-form input,.checkout-form select {
+
+  display:block;
+
+  width:100%;
+
+  margin-top:7px;
+
+  padding:13px;
+
+  border:1px solid var(--border);
+
+  background:white;
+
+  outline:none;
+
+}
+
+.toast {
+
+  position:fixed;
+
+  z-index:100;
+
+  bottom:25px;
+
+  left:50%;
+
+  transform:translate(-50%,100px);
+
+  background:var(--dark);
+
+  color:white;
+
+  padding:14px 23px;
+
+  font-size:12px;
+
+  transition:.3s;
+
+}
+
+.toast.show {transform:translate(-50%,0)}
+
+@media(max-width:900px) {
+
+  .products {grid-template-columns:repeat(2,minmax(0,1fr))}
+
+  nav {gap:15px}
+
+}
+
+@media(max-width:600px) {
+
+  header {height:65px;padding:0 4%}
+
+  .logo {font-size:27px}
+
+  nav {
+
+    display:none;
+
+    position:absolute;
+
+    top:65px;left:0;right:0;
+
+    background:white;
+
+    padding:22px;
+
+    flex-direction:column;
+
+    box-shadow:0 8px 12px #0001;
+
+  }
+
+  nav.open {display:flex}
+
+  .menu-btn {display:inline-block}
+
+  .hero {min-height:530px}
+
+  section {padding:60px 4%}
+
+  .runway {height:480px}
+
+  .runway-model {width:85%}
+
+  .runway-info {left:14px;bottom:18px}
+
+  .runway-info h3 {font-size:28px}
+
+  .runway-controls {right:14px;bottom:18px}
+
+  .products {gap:12px}
+
+  .product-meta h3 {font-size:19px}
+
+  .quick-view {opacity:1}
+
+  .collection-grid {grid-template-columns:1fr}
+
+  .collection-card {height:360px}
+
+  .footer-grid {grid-template-columns:1fr 1fr}
+
+  .footer-grid>div:first-child {grid-column:1/-1}
+
+  .product-detail {grid-template-columns:1fr}
+
+  .product-detail img {height:300px}
+
+  .detail-info {padding-top:0}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <button class="icon-btn menu-btn" onclick="toggleMenu()">☰</button>
+
+  <a href="#home" class="logo">ÉLORA</a>
+
+  <nav id="nav">
+
+    <a href="#home" onclick="closeMenu()">HOME</a>
+
+    <a href="#runway" onclick="closeMenu()">RUNWAY</a>
+
+    <a href="#shop" onclick="closeMenu()">SHOP</a>
+
+    <a href="#collections" onclick="closeMenu()">COLLECTIONS</a>
+
+  </nav>
+
+  <div class="header-actions">
+
+    <button class="icon-btn" onclick="document.getElementById('search').focus()">⌕</button>
+
+    <button class="icon-btn" onclick="openCart()">♧ <span class="cart-count" id="cartCount">0</span></button>
+
+  </div>
+
+</header>
+
+<main>
+
+  <!-- HOMEPAGE -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">THE ART OF DRESSING</div>
+
+      <h1>Elegance in<br>Every Step</h1>
+
+      <p>Discover fashion that tells your story.<br>
+
+      A new vision of timeless luxury.</p>
+
+      <div class="hero-buttons">
+
+        <button class="primary-btn" onclick="document.getElementById('runway').scrollIntoView({behavior:'smooth'})">WATCH THE SHOW</button>
+
+        <button class="outline-btn" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">SHOP NOW</button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RUNWAY -->
+
+  <section id="runway">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">THE DIGITAL CATWALK</div>
+
+      <h2>Walk the Runway</h2>
+
+      <p>Discover our latest designs in motion.</p>
+
+    </div>
+
+    <div class="runway" id="runwayStage">
+
+      <div class="spotlight"></div>
+
+      <img id="runwayModel" class="runway-model"
+
+      src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800"
+
+      alt="Fashion model">
+
+      <div class="runway-info">
+
+        <small id="runwayNumber">LOOK 01 / 04</small>
+
+        <h3 id="runwayTitle">The Evening Edit</h3>
+
+        <button class="outline-btn" onclick="openProduct(runwayLooks[runwayIndex].id)">SHOP THIS LOOK</button>
+
+      </div>
+
+      <button class="round-btn runway-pause" id="pauseBtn" onclick="toggleRunway()">Ⅱ</button>
+
+      <div class="runway-controls">
+
+        <button class="round-btn" onclick="changeLook(-1)">←</button>
+
+        <button class="round-btn" onclick="changeLook(1)">→</button>
+
+      </div>
+
+    </div>
+
+    <p style="text-align:center;color:#928476;font-size:10px;margin-top:12px">
+
+      Runway preview — add walking model videos for realistic motion.
+
+    </p>
+
+  </section>
+
+  <!-- SHOP -->
+
+  <section class="shop-section" id="shop">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">CURATED FOR YOU</div>
+
+      <h2>Explore the Collection</h2>
+
+      <p>Pieces designed to make every moment special.</p>
+
+    </div>
+
+    <input id="search" class="search-box"
+
+    placeholder="Search your favourite style..."
+
+    oninput="renderProducts()">
+
+    <div class="filters">
+
+      <button class="filter-btn active" onclick="setCategory('All',this)">ALL</button>
+
+      <button class="filter-btn" onclick="setCategory('Dresses',this)">DRESSES</button>
+
+      <button class="filter-btn" onclick="setCategory('Ethnic',this)">ETHNIC</button>
+
+      <button class="filter-btn" onclick="setCategory('Casual',this)">CASUAL</button>
+
+      <button class="filter-btn" onclick="setCategory('Evening',this)">EVENING</button>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+  </section>
+
+  <!-- COLLECTIONS -->
+
+  <section id="collections" class="collection">
+
+    <div class="section-heading">
+
+      <div class="eyebrow">FIND YOUR STYLE</div>
+
+      <h2>Our Collections</h2>
+
+      <p>Every collection has a story to tell.</p>
+
+    </div>
+
+    <div class="collection-grid">
+
+      <div class="collection-card">
+
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900" alt="New season">
+
+        <div class="collection-caption">
+
+          <h3>New Season</h3>
+
+          <button onclick="filterAndShop('All')">DISCOVER MORE</button>
+
+        </div>
+
+      </div>
+
+      <div class="collection-card">
+
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900" alt="Everyday style">
+
+        <div class="collection-caption">
+
+          <h3>Everyday Elegance</h3>
+
+          <button onclick="filterAndShop('Casual')">EXPLORE STYLE</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+
+      <h3>ÉLORA</h3>
+
+      <p style="margin-top:12px">A celebration of individuality,<br>
+
+      confidence and timeless fashion.</p>
+
+    </div>
+
+    <div>
+
+      <h4>EXPLORE</h4>
+
+      <a href="#home">Home</a>
+
+      <a href="#runway">Runway</a>
+
+      <a href="#shop">Shop</a>
+
+      <a href="#collections">Collections</a>
+
+    </div>
+
+    <div>
+
+      <h4>INFORMATION</h4>
+
+      <a href="#" onclick="showInfo('About ÉLORA');return false">About us</a>
+
+      <a href="#" onclick="showInfo('Contact us');return false">Contact</a>
+
+      <a href="#" onclick="showInfo('Privacy policy');return false">Privacy policy</a>
+
+      <a href="#" onclick="showInfo('Shipping & returns');return false">Shipping & returns</a>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">©️ 2026 ÉLORA. FRONTEND DEMO.</div>
+
+</footer>
+
+<!-- CART DRAWER -->
+
+<div class="overlay" id="cartOverlay" onclick="outsideCart(event)">
+
+  <div class="cart-drawer">
+
+    <div class="drawer-header">
+
+      <h2>Your Shopping Bag</h2>
+
+      <button class="close-btn" onclick="closeCart()">×</button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div id="cartBottom"></div>
+
+  </div>
+
+</div>
+
+<!-- PRODUCT MODAL -->
+
+<div class="modal" id="productModal" onclick="outsideModal(event,'productModal')">
+
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeModal('productModal')">×</button>
+
+    <div id="productDetail"></div>
+
+  </div>
+
+</div>
+
+<!-- CHECKOUT -->
+
+<div class="modal" id="checkoutModal" onclick="outsideModal(event,'checkoutModal')">
+
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeModal('checkoutModal')">×</button>
+
+    <h2 style="font:34px 'Cormorant Garamond',serif">Checkout</h2>
+
+    <p style="font-size:12px;color:#928476;margin-top:8px">
+
+      Enter your details to preview your order.
+
+    </p>
+
+    <form class="checkout-form" id="checkoutForm">
+
+      <label>FULL NAME
+
+        <input required placeholder="Your name">
+
+      </label>
+
+      <label>EMAIL ADDRESS
+
+        <input type="email" required placeholder="you@example.com">
+
+      </label>
+
+      <label>PHONE NUMBER
+
+        <input type="tel" required placeholder="Your phone number">
+
+      </label>
+
+      <label>DELIVERY ADDRESS
+
+        <input required placeholder="House, street, city, PIN code">
+
+      </label>
+
+      <label>PAYMENT METHOD
+
+        <select>
+
+          <option>Cash on delivery (demo)</option>
+
+          <option>Online payment (demo only)</option>
+
+        </select>
+
+      </label>
+
+      <div id="checkoutTotal" style="font-weight:600;padding:8px 0"></div>
+
+      <button class="full-btn" type="submit">PLACE DEMO ORDER</button>
+
+    </form>
+
+    <p style="font-size:10px;color:#928476;margin-top:12px">
+
+      Frontend demonstration only. No payment or real order is processed.
+
+    </p>
+
+  </div>
+
+</div>
+
+<!-- INFORMATION -->
+
+<div class="modal" id="infoModal" onclick="outsideModal(event,'infoModal')">
+
+  <div class="modal-box">
+
+    <button class="modal-close" onclick="closeModal('infoModal')">×</button>
+
+    <h2 id="infoTitle" style="font:34px 'Cormorant Garamond',serif"></h2>
+
+    <p style="margin-top:15px;color:#928476;font-size:13px;line-height:1.8">
+
+      Welcome to ÉLORA. Customize this section with your brand's
+
+      actual information when developing your store.
+
+    </p>
+
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+const productsData = [
+
+ {id:1,name:"The Noir Dress",category:"Dresses",price:3499,
+
+ image:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=700",
+
+ description:"An elegant statement dress for memorable occasions."},
+
+ {id:2,name:"The Élan Gown",category:"Evening",price:4999,
+
+ image:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=700",
+
+ description:"A graceful evening look with timeless appeal."},
+
+ {id:3,name:"The Classic Edit",category:"Casual",price:2299,
+
+ image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700",
+
+ description:"An effortlessly versatile style for everyday wear."},
+
+ {id:4,name:"The Rose Ensemble",category:"Ethnic",price:3899,
+
+ image:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700",
+
+ description:"A beautifully inspired outfit for celebrations."},
+
+ {id:5,name:"The Golden Hour",category:"Dresses",price:4299,
+
+ image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700",
+
+ description:"A refined silhouette made for standout moments."},
+
+ {id:6,name:"The Modern Muse",category:"Casual",price:1999,
+
+ image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=700",
+
+ description:"Contemporary style with a comfortable finish."},
+
+ {id:7,name:"The Royal Grace",category:"Ethnic",price:4599,
+
+ image:"https://images.unsplash.com/photo-1583391733956-6c78276477e8?w=700",
+
+ description:"A festive look inspired by classic elegance."},
+
+ {id:8,name:"The Midnight Look",category:"Evening",price:5299,
+
+ image:"https://images.unsplash.com/photo-1509631179647-0177331693ae?w=700",
+
+ description:"A sophisticated look for evening occasions."}
+
+];
+
+const runwayLooks = [
+
+ {id:1,title:"The Evening Edit",number:"LOOK 01 / 04"},
+
+ {id:2,title:"The Élan Gown",number:"LOOK 02 / 04"},
+
+ {id:5,title:"Golden Hour",number:"LOOK 03 / 04"},
+
+ {id:8,title:"Midnight Look",number:"LOOK 04 / 04"}
+
+];
+
+let cart = [];
+
+try {
+
+  cart=JSON.parse(localStorage.getItem("eloraCart")||"[]");
+
+  if(!Array.isArray(cart))cart=[];
+
+} catch(e) {cart=[];}
+
+let category="All";
+
+let runwayIndex=0;
+
+let runwayTimer=null;
+
+let runwayPlaying=true;
+
+let selectedSize="M";
+
+let selectedColor="Classic";
+
+let activeProduct=null;
+
+let liked=[];
+
+const money=n=>"₹"+n.toLocaleString("en-IN");
+
+const getProduct=id=>productsData.find(p=>p.id===Number(id));
+
+/* PRODUCT DISPLAY */
+
+function renderProducts() {
+
+ const query=document.getElementById("search").value.toLowerCase();
+
+ const filtered=productsData.filter(p=>
+
+  (category==="All"||p.category===category)&&
+
+  (p.name.toLowerCase().includes(query)||
+
+   p.category.toLowerCase().includes(query))
+
+ );
+
+ document.getElementById("products").innerHTML=filtered.length?
+
+ filtered.map(p=>`
+
+  <article class="product-card">
+
+   <div class="product-image">
+
+    <img src="${p.image}" alt="${p.name}" loading="lazy">
+
+    <button class="heart ${liked.includes(p.id)?"liked":""}"
+
+      onclick="toggleLike(${p.id},this)">
+
+      ${liked.includes(p.id)?"♥️":"♡"}
+
+    </button>
+
+    <button class="quick-view" onclick="openProduct(${p.id})">QUICK VIEW</button>
+
+   </div>
+
+   <div class="product-meta">
+
+    <h3>${p.name}</h3>
+
+    <p>${p.category}</p>
+
+    <div class="product-price">${money(p.price)}</div>
+
+    <button class="add-btn" onclick="openProduct(${p.id})">SELECT OPTIONS</button>
+
+   </div>
+
+  </article>`).join("") :
+
+  '<p style="grid-column:1/-1;text-align:center;padding:40px">No matching products found.</p>';
+
+}
+
+function setCategory(value,btn) {
+
+ category=value;
+
+ document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+
+ btn.classList.add("active");
+
+ renderProducts();
+
+}
+
+function filterAndShop(value) {
+
+ category=value;
+
+ document.querySelectorAll(".filter-btn").forEach(b=>{
+
+  b.classList.toggle("active",
+
+   b.textContent.trim()===(value==="All"?"ALL":value.toUpperCase()));
+
+ });
+
+ document.getElementById("shop").scrollIntoView({behavior:"smooth"});
+
+ renderProducts();
+
+}
+
+function toggleLike(id,btn) {
+
+ liked=liked.includes(id)?liked.filter(x=>x!==id):[...liked,id];
+
+ btn.classList.toggle("liked");
+
+ btn.textContent=liked.includes(id)?"♥️":"♡";
+
+ showToast(liked.includes(id)?"Added to wishlist":"Removed from wishlist");
+
+}
+
+/* PRODUCT DETAILS */
+
+function openProduct(id) {
+
+ activeProduct=getProduct(id);
+
+ if(!activeProduct)return;
+
+ selectedSize="M";
+
+ selectedColor="Classic";
+
+ renderDetail();
+
+ document.getElementById("productModal").classList.add("show");
+
+}
+
+function renderDetail() {
+
+ const p=activeProduct;
+
+ document.getElementById("productDetail").innerHTML=`
+
+  <div class="product-detail">
+
+   <img src="${p.image}" alt="${p.name}">
+
+   <div class="detail-info">
+
+    <div style="font-size:10px;letter-spacing:2px;color:#a48a6e">${p.category.toUpperCase()}</div>
+
+    <h2>${p.name}</h2>
+
+    <div class="detail-price">${money(p.price)}</div>
+
+    <p>${p.description}</p>
+
+    <div class="option-label">SELECT SIZE</div>
+
+    <div class="sizes">
+
+     ${["XS","S","M","L","XL"].map(s=>`
+
+      <button class="size-btn ${s===selectedSize?"selected":""}"
+
+       onclick="selectSize('${s}')">${s}</button>`).join("")}
+
+    </div>
+
+    <div class="option-label">COLOUR</div>
+
+    <select onchange="selectedColor=this.value">
+
+     <option>Classic</option>
+
+     <option>Black</option>
+
+     <option>Ivory</option>
+
+     <option>Rose</option>
+
+    </select>
+
+    <button class="full-btn" onclick="addToCart(${p.id})">ADD TO CART</button>
+
+    <button class="add-btn" onclick="buyNow(${p.id})">BUY NOW</button>
+
+   </div>
+
+  </div>`;
+
+}
+
+function selectSize(size) {
+
+ selectedSize=size;
+
+ renderDetail();
+
+}
+
+/* CART */
+
+function addToCart(id) {
+
+ const p=getProduct(id);
+
+ const existing=cart.find(i=>i.id===id&&i.size===selectedSize&&i.color===selectedColor);
+
+ if(existing)existing.qty++;
+
+ else cart.push({id:p.id,size:selectedSize,color:selectedColor,qty:1});
+
+ saveCart();
+
+ closeModal("productModal");
+
+ showToast("Added to your bag");
+
+}
+
+function buyNow(id) {
+
+ addToCart(id);
+
+ closeModal("productModal");
+
+ openCart();
+
+}
+
+function saveCart() {
+
+ try {localStorage.setItem("eloraCart",JSON.stringify(cart));}catch(e){}
+
+ document.getElementById("cartCount").textContent=
+
+ cart.reduce((s,i)=>s+i.qty,0);
+
+ renderCart();
+
+}
+
+function renderCart() {
+
+ const items=document.getElementById("cartItems");
+
+ const bottom=document.getElementById("cartBottom");
+
+ if(!cart.length) {
+
+  items.innerHTML='<div class="empty"><div style="font-size:40px">♧</div><p>Your bag is empty.</p></div>';
+
+  bottom.innerHTML=`<button class="full-btn" onclick="closeCart();document.getElementById('shop').scrollIntoView({behavior:'smooth'})">CONTINUE SHOPPING</button>`;
+
+  return;
+
+ }
+
+ items.innerHTML=cart.map((i,index)=>{
+
+  const p=getProduct(i.id);
+
+  if(!p)return "";
+
+  return `<div class="cart-item">
+
+   <img src="${p.image}" alt="${p.name}">
+
+   <div class="cart-item-info">
+
+    <h3>${p.name}</h3>
+
+    <p>Size: ${i.size} · Colour: ${i.color}</p>
+
+    <b style="font-size:12px">${money(p.price)}</b>
+
+    <div class="qty">
+
+     <button onclick="changeQty(${index},-1)">−</button>
+
+     <span>${i.qty}</span>
+
+     <button onclick="changeQty(${index},1)">+</button>
+
+    </div>
+
+    <button class="remove" onclick="removeItem(${index})">REMOVE</button>
+
+   </div>
+
+  </div>`;
+
+ }).join("");
+
+ const total=cart.reduce((s,i)=>s+(getProduct(i.id)?.price||0)*i.qty,0);
+
+ bottom.innerHTML=`
+
+  <div class="cart-total"><span>Subtotal</span><span>${money(total)}</span></div>
+
+  <p style="font-size:10px;color:#928476">Shipping and taxes are not included.</p>
+
+  <button class="full-btn" onclick="openCheckout()">PROCEED TO CHECKOUT</button>
+
+  <button class="add-btn" onclick="closeCart()">CONTINUE SHOPPING</button>`;
+
+}
+
+function changeQty(index,delta) {
+
+ cart[index].qty+=delta;
+
+ if(cart[index].qty<=0)cart.splice(index,1);
+
+ saveCart();
+
+}
+
+function removeItem(index) {
+
+ cart.splice(index,1);
+
+ saveCart();
+
+}
+
+function openCart() {
+
+ renderCart();
+
+ document.getElementById("cartOverlay").classList.add("show");
+
+}
+
+function closeCart() {
+
+ document.getElementById("cartOverlay").classList.remove("show");
+
+}
+
+function outsideCart(e) {
+
+ if(e.target.id==="cartOverlay")closeCart();
+
+}
+
+/* CHECKOUT DEMO */
+
+function openCheckout() {
+
+ if(!cart.length)return;
+
+ const total=cart.reduce((s,i)=>s+getProduct(i.id).price*i.qty,0);
+
+ document.getElementById("checkoutTotal").textContent="Order total: "+money(total);
+
+ closeCart();
+
+ document.getElementById("checkoutModal").classList.add("show");
+
+}
+
+document.getElementById("checkoutForm").addEventListener("submit",e=>{
+
+ e.preventDefault();
+
+ const orderNo="EL"+Date.now().toString().slice(-7);
+
+ cart=[];
+
+ saveCart();
+
+ closeModal("checkoutModal");
+
+ showToast("Demo order "+orderNo+" created!");
+
+ e.target.reset();
+
+});
+
+/* MODALS */
+
+function closeModal(id) {
+
+ document.getElementById(id).classList.remove("show");
+
+}
+
+function outsideModal(e,id) {
+
+ if(e.target.id===id)closeModal(id);
+
+}
+
+function showInfo(title) {
+
+ document.getElementById("infoTitle").textContent=title;
+
+ document.getElementById("infoModal").classList.add("show");
+
+}
+
+/* RUNWAY */
+
+function displayLook() {
+
+ const look=runwayLooks[runwayIndex];
+
+ const p=getProduct(look.id);
+
+ const img=document.getElementById("runwayModel");
+
+ img.style.opacity=0;
+
+ setTimeout(()=>{
+
+  img.src=p.image;
+
+  img.alt=p.name;
+
+  document.getElementById("runwayTitle").textContent=look.title;
+
+  document.getElementById("runwayNumber").textContent=look.number;
+
+  img.style.opacity=1;
+
+ },220);
+
+}
+
+function changeLook(delta) {
+
+ runwayIndex=(runwayIndex+delta+runwayLooks.length)%runwayLooks.length;
+
+ displayLook();
+
+}
+
+function toggleRunway() {
+
+ runwayPlaying=!runwayPlaying;
+
+ document.getElementById("runwayStage").classList.toggle("paused",!runwayPlaying);
+
+ document.getElementById("pauseBtn").textContent=runwayPlaying?"Ⅱ":"▶️";
+
+ clearInterval(runwayTimer);
+
+ if(runwayPlaying) {
+
+  runwayTimer=setInterval(()=>changeLook(1),5000);
+
+ }
+
+}
+
+/* MOBILE NAV + NOTIFICATIONS */
+
+function toggleMenu() {
+
+ document.getElementById("nav").classList.toggle("open");
+
+}
+
+function closeMenu() {
+
+ document.getElementById("nav").classList.remove("open");
+
+}
+
+function showToast(message) {
+
+ const el=document.getElementById("toast");
+
+ el.textContent=message;
+
+ el.classList.add("show");
+
+ clearTimeout(window.toastTimer);
+
+ window.toastTimer=setTimeout(()=>el.classList.remove("show"),2200);
+
+}
+
+/* INITIALIZE */
+
+renderProducts();
+
+saveCart();
+
+displayLook();
+
+runwayTimer=setInterval(()=>changeLook(1),5000);
+
+</script>
+
+</body>
+
+</html>
